@@ -11,3 +11,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/phpunit.xml
+.idea/php.xml
+.idea/modules.xml
+.idea/access.iml
