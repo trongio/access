@@ -17,3 +17,8 @@ yarn-error.log
 .idea/php.xml
 .idea/modules.xml
 .idea/access.iml
+package-lock.json
+public/css/app.css
+public/css/main.css
+public/js/app.js
+public/mix-manifest.json

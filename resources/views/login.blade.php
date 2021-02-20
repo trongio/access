@@ -1,13 +1,6 @@
+@extends('layouts.layout')
 
-<!doctype html>
-<html lang="en">
-<head>
-    <title>login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
+@section('content')
 <div class="container">
     <h1>Login</h1>
     <p id="serverResponse"></p>
@@ -27,6 +20,3 @@
     <button id="submitbutton" name="signup-btn" type="submit" class="btn btn-primary">Submit</button>
 
 </div>
-
-</body>
-</html>
