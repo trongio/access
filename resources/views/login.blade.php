@@ -1,22 +1,27 @@
-@extends('layouts.layout')
+@extends('layouts.LoginLayout')
 
 @section('content')
-<div class="container">
-    <h1>Login</h1>
-    <p id="serverResponse"></p>
+    <?php
+    $errorMessage = $errorMessage ?? false;
+    $data = $data ?? ['username' => ''];
+    ?>
+    <div class="container">
+        <h1>Login to your account</h1>
 
-    <div class="form-group">
-        <label for="email">Email address:</label>
-        <input id="email" type="email" class="form-control "
-               name="email">
+        <form method="post" action="/login">
+            <?php if ($errorMessage): ?>
+            <div class="alert alert-danger">
+                <p><?php echo $errorMessage ?></p>
+            </div>
+            <?php endif; ?>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username" value="<?php echo $data['email'] ?>">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label for="password">password:</label>
-        <input id="password" type="password" class="form-control "
-               name="password">
-    </div>
-
-    <button id="submitbutton" name="signup-btn" type="submit" class="btn btn-primary">Submit</button>
-
-</div>
