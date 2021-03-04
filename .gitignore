@@ -23,3 +23,6 @@ public/css/main.css
 public/js/app.js
 public/mix-manifest.json
 .idea/laravel-plugin.xml
+.idea/dataSources/85549cc6-4129-446c-9fa5-30dfddc006fc.xml
+.idea/*.*
+.idea/*
