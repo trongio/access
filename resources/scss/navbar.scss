@@ -1,0 +1,23 @@
+.navbar {
+    background-color: color(grey,slighter);
+
+    div:first-child{
+        display: flex;
+        width: 100%;
+    }
+
+    .topnav {
+        padding-left: 65px;
+        padding-right: 10px;
+
+        .input-group{
+            height: 20px;
+        }
+
+        span {
+            display: block;
+            padding: 10px;
+        }
+    }
+}
+
