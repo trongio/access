@@ -1,0 +1,27 @@
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 56px;
+    left: 0;
+    background-color: color(grey,slighter);
+    overflow-x: hidden;
+
+    a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 22px;
+        color: color(grey,base);
+        display: block;
+
+        &:hover {
+            color: color(grey,darker);
+        }
+    }
+}
+
+.main {
+    margin-left: 160px;
+    padding: 0px 10px;
+}

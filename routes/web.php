@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +12,42 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| EXAPLES
+|--------------------------------------------------------------------------
+ use App\Http\Controllers\UserController;
+ Route::get('/user', [UserController::class, 'index']);
+--------------------------------------------------------------------------
+    Route::get($uri, $callback);
+    Route::post($uri, $callback);
+    Route::put($uri, $callback);
+    Route::patch($uri, $callback);
+    Route::delete($uri, $callback);
+    Route::options($uri, $callback);
+--------------------------------------------------------------------------
+    Route::match(['get', 'post'], '/', function () {
+        //
+    });
+
+    Route::any('/', function () {
+        //
+    });
+--------------------------------------------------------------------------
 */
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+//Route::post('/login', 'LoginController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

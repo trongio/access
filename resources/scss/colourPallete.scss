@@ -1,0 +1,45 @@
+$palettes: (
+    blue: (
+        darker: hsl(201, 61%, 34%),
+        dark: hsl(198, 57%, 39%),
+        base: hsl(196, 59%, 42%),
+        light: hsl(194, 56%, 51%),
+        lighter: hsl(192, 61%, 53%),
+        slighter: hsl(192, 100%, 65%)
+    ),
+    red: (
+        base: hsl(0, 100%, 58%)
+    ),
+    gray:(
+        darker: hsl(210, 15%, 24%),
+        dark: hsl(209, 13%, 35%),
+        base: hsl(206, 11%, 45%),
+        light: 	hsl(221, 12%, 69%),
+        lighter: hsl(219, 13%, 78%),
+        slighter: #f8f9fa,
+
+    ),
+);
+
+@function color($color,$tone){
+
+    @if map-has-key($palettes,$color){
+        $color: map-get($palettes,$color);
+
+        @if map-has-key($color,$tone){
+            $tone: map-get($color,$tone);
+            @return $tone;
+        }
+        @return null;
+    }
+    @return null;
+
+}
+/*
+* Usage example
+*
+* .banner{
+*     background-color: color(blue,base);
+* }
+*
+*/
