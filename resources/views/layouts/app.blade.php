@@ -12,6 +12,10 @@
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/8893af1676.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -114,15 +118,30 @@
             @endif
         @else
          <nav class="sidenav ">
-            <a href="#" class=" p-3 bg-light rounded">Personal</a>
-            <a href="#" class=" p-3 bg-light rounded">Logs</a>
-            <a href="#" class=" p-3 bg-light rounded">Departament</a>
-            <a href="#" class="shadow-sm p-3 bg-light rounded">Monthly Attendance</a>
+            <a  onclick="getSegment('')" class=" btn p-3 bg-light rounded">Personal</a>
+            <a  onclick="getSegment('Logs')" class="btn  p-3 bg-light rounded">Logs</a>
+            <a  onclick="getSegment('Departament')" class="btn  p-3 bg-light rounded">Departament</a>
+            <a  onclick="getSegment('Attendance')" class="btn shadow-sm p-3 bg-light rounded">Monthly Attendance</a>
         </nav>
         @endguest
-        <main class="py-4" class="main">
+        <main id="main" class="py-4 main">
             @yield('content')
         </main>
     </div>
 </body>
+
+
+{{--<script>--}}
+
+{{--        function getSegment(button) {--}}
+{{--            alert('working')--}}
+{{--            $.ajax({--}}
+{{--                url: '/' + button,--}}
+{{--                type: 'GET',--}}
+{{--                success: function success(result) {--}}
+{{--                    $("#main").html(result);--}}
+{{--                }--}}
+{{--            });--}}
+{{--        }--}}
+{{--</script>--}}
 </html>
