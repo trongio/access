@@ -43,10 +43,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/personnel', function () {
-//    return view('personnel');
-//});
-
 Route::get('/personnel', [PersonnelTableController::class, 'index']);
 
 Route::get('/logs', function () {
@@ -57,7 +53,6 @@ Route::get('/attendance', function () {
     return view('attendance');
 });
 
-//Route::post('/login', 'LoginController');
 
 Auth::routes();
 
