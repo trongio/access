@@ -19,6 +19,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
@@ -114,6 +116,9 @@
         <main id="main" class="main">
             @yield('content')
         </main>
+        <footer>
+            Copywrite Digital Katana 2021
+        </footer>
     </div>
 </body>
 </html>
