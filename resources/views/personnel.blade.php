@@ -18,7 +18,20 @@
         <td>9:00</td>
         <td>18:00</td>
     </tr>
-
+    @if(count($personnel)>0)
+        @foreach($personnel as $person)
+            <tr>
+                <th scope="row">{{$person->id}}</th>
+                <td>{{$person->name}}</td>
+                <td>{{$person->cardNum}}</td>
+                <td>{{$person->departmentName}}</td>
+                <td>{{$person->shiftStart}}</td>
+                <td>{{$person->shiftEnd}}</td>
+            </tr>
+        @endforeach
+    @else
+        <h3>No personnel</h3>
+    @endif
 
 
     </tbody>
