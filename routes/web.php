@@ -43,9 +43,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/personnel', function () {
+    return view('personnel');
 });
+
+Route::get('/logs', function () {
+    return view('logs');
+});
+
+Route::get('/attendance', function () {
+    return view('attendance');
+});
+
 //Route::post('/login', 'LoginController');
 
 Auth::routes();
