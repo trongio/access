@@ -1,5 +1,9 @@
 .navbar {
+    top: 0;
+    width: 100%;
+    position: fixed;
     background-color: color(grey,slighter);
+    padding-left: 48px;
 
     div:first-child{
         display: flex;
