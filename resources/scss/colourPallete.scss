@@ -19,6 +19,10 @@ $palettes: (
         slighter: #f8f9fa,
 
     ),
+    black:(
+        blackt03: rgba(0,0,0,.3),
+        base: black,
+    ),
 );
 
 @function color($color,$tone){
