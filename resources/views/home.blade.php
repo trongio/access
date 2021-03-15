@@ -39,15 +39,6 @@
                 @endif
             @else
         {{--Search Bar--}}
-                <li class="nav-item">
-                    <div class="input-group rounded">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                               aria-describedby="search-addon" />
-                        <button onclick="search()" class="btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </li>
 
                 <li class="nav-item">
                     <a id="navbarDropdown" class="nav-link" href="#" >

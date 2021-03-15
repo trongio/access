@@ -3,7 +3,7 @@ window.getSegment = function (button) {
         url: '/' + button,
         type: 'GET',
         success: function success(result) {
-            $("#main").html(result);
+            $("#table-container").html(result);
         }
     });
 }

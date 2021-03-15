@@ -1,2 +1,3 @@
 require('./bootstrap');
-require('./mainAjax')
+require('./mainAjax');
+require('./search');
