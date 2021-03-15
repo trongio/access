@@ -16,7 +16,7 @@ class PersonnelSeeder extends Seeder
     public function run()
     {
         for ($x = 0; $x <= 10; $x++) {
-            DB::table('Personnel')->insert([
+            DB::table('personnel')->insert([
                 'name'   => Str::random(10),
                 'departmentName' =>  Str::random(5),
                 'cardNum' => rand(2093,999999),
