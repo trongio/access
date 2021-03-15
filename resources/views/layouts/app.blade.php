@@ -46,6 +46,7 @@
         @else
             @yield('sidenav')
         @endguest
+
         <main id="main" class="main">
             @yield('content')
         </main>
