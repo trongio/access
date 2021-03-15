@@ -1,0 +1,19 @@
+body
+{
+    &::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px color(black,blackt03);
+        background-color: color(grey,slighter);
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 10px;
+        background-color: color(grey,lighter);
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        -webkit-box-shadow: inset 0 0 6px  color(black,blackt03);
+        background-color: color(grey,base);
+    }
+}

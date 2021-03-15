@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\PersonnelTableController;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -43,10 +43,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/personnel', [PersonnelTableController::class, 'index']);
+
+Route::get('/logs', function () {
+    return view('logs');
 });
-//Route::post('/login', 'LoginController');
+
+Route::get('/attendance', function () {
+    return view('attendance');
+});
+
 
 Auth::routes();
 

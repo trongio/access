@@ -19,6 +19,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
@@ -42,13 +44,9 @@
                     <ul class="navbar-nav mr-auto">
 
                         @guest
-                            @if (Route::has('login'))
+                            @if (Route::has('login'))@endif
 
-                            @endif
-
-                            @if (Route::has('register'))
-
-                            @endif
+                            @if (Route::has('register'))@endif
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Personal</a>
@@ -82,9 +80,9 @@
                                 <div class="input-group rounded">
                                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                                            aria-describedby="search-addon" />
-                                    <span class="" id="search-addon">
-                                <i class="fas fa-search"></i>
-                              </span>
+                                    <button onclick="search()" class="btn">
+                                        <i class="fas fa-search"></i>
+                                    </button>
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -109,39 +107,18 @@
             </div>
         </nav>
         @guest
-            @if (Route::has('login'))
+            @if (Route::has('login'))@endif
 
-            @endif
-
-            @if (Route::has('register'))
-
-            @endif
+            @if (Route::has('register'))@endif
         @else
-         <nav class="sidenav ">
-            <a  onclick="getSegment('')" class=" btn p-3 bg-light rounded">Personal</a>
-            <a  onclick="getSegment('Logs')" class="btn  p-3 bg-light rounded">Logs</a>
-            <a  onclick="getSegment('Departament')" class="btn  p-3 bg-light rounded">Departament</a>
-            <a  onclick="getSegment('Attendance')" class="btn shadow-sm p-3 bg-light rounded">Monthly Attendance</a>
-        </nav>
+            @yield('sidenav')
         @endguest
-        <main id="main" class="py-4 main">
+        <main id="main" class="main">
             @yield('content')
         </main>
+        <footer>
+            Copywrite Digital Katana 2021
+        </footer>
     </div>
 </body>
-
-
-{{--<script>--}}
-
-{{--        function getSegment(button) {--}}
-{{--            alert('working')--}}
-{{--            $.ajax({--}}
-{{--                url: '/' + button,--}}
-{{--                type: 'GET',--}}
-{{--                success: function success(result) {--}}
-{{--                    $("#main").html(result);--}}
-{{--                }--}}
-{{--            });--}}
-{{--        }--}}
-{{--</script>--}}
 </html>

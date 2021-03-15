@@ -14,4 +14,5 @@ yarn-error.log
 .idea/
 package-lock.json
 public/
+composer.lock
 
