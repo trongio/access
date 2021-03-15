@@ -1,12 +1,13 @@
-<table id="personnelTable" class="table table-hover table-bordered table-sm border-dark">
+<table id="logsTable" class="table table-hover table-bordered table-sm border-dark">
     <thead>
     <tr>
         <th scope="col">№</th>
         <th scope="col">Name</th>
+        <th scope="col">Card №</th>
         <th scope="col">Action</th>
-        <th scope="col">time</th>
-        <th scope="col">date</th>
-        <th scope="col">Shift end</th>
+        <th scope="col">Door</th>
+        <th scope="col">Time</th>
+        <th scope="col">Date</th>
     </tr>
     </thead>
     <tbody>
@@ -14,7 +15,7 @@
         <th scope="row">0</th>
         <td>Giorgi Kakabadze</td>
         <td>987546565</td>
-        <td>ALL</td>
+        <td>check in</td>
         <td>9:00</td>
         <td>18:00</td>
     </tr>
@@ -30,7 +31,7 @@
             </tr>
         @endforeach
     @else
-        <h3>No personnel</h3>
+        <h3>No Logs</h3>
     @endif
 
 

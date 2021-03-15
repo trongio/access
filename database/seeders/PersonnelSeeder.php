@@ -15,13 +15,12 @@ class PersonnelSeeder extends Seeder
      */
     public function run()
     {
-        for ($x = 0; $x <= 10; $x++) {
+        for ($x = 0; $x <= 100; $x++) {
             DB::table('personnel')->insert([
-                'name'   => Str::random(10),
-                'departmentName' =>  Str::random(5),
+                'personName'   => Str::random(6).' '.Str::random(10),
                 'cardNum' => rand(2093,999999),
-                'shiftStart' => rand(1,9).':'.rand(0,60),
-                'shiftEnd' => rand(10,24).':'.rand(0,60),
+                'shiftID' =>  rand(1,5),
+                'departmentID' =>  rand(1,5),
             ]);
         }
     }
