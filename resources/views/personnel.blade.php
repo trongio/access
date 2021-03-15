@@ -29,8 +29,8 @@
     @if(count($personnel)>0)
         @foreach($personnel as $person)
             <tr>
-                <th scope="row">{{$person->id}}</th>
-                <td>{{$person->name}}</td>
+                <th scope="row">{{$person->personid}}</th>
+                <td>{{$person->personName}}</td>
                 <td>{{$person->cardNum}}</td>
                 <td>{{$person->departmentName}}</td>
                 <td>{{$person->shiftStart}}</td>

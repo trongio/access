@@ -8,7 +8,11 @@ class TableController extends Controller
 {
     public function personnel()
     {
-        $personnel = DB::select('select * from personnel');
+        $personnel = DB::select('
+            select p.personid, p.personName, p.cardNum, d.departmentName, TIME_FORMAT(s.shiftStart,"%k:%i") as "shiftStart", TIME_FORMAT(s.shiftEnd,"%k:%i") as "shiftEnd" from personnel p
+            inner join shifts s on p.shiftID = s.shiftID
+            inner join departments d on p.departmentID = d.departmentID;
+            ');
         return view('personnel',['personnel'=>$personnel]);
     }
 
