@@ -1,13 +1,5 @@
 <table id="table" class="table table-hover table-bordered table-sm border-dark">
     <thead>
-    {{--<tr>
-        <th scope="col"><input onkeyup="searchSystem()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></th>
-        <th scope="col"><input onkeyup="searchSystem()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></th>
-        <th scope="col"><input onkeyup="searchSystem()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></th>
-        <th scope="col"><input onkeyup="searchSystem()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></th>
-        <th scope="col"><input onkeyup="searchSystem()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></th>
-        <th scope="col"><input onkeyup="searchSystem()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></th>
-    </tr>--}}
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>

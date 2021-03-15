@@ -18,7 +18,12 @@ class TableController extends Controller
 
     public function logs()
     {
-        $logs = DB::select('select * from logs');
+        $logs = DB::select('
+            select l.logID, p.PersonName, p.cardNum, a.actionName, TIME_FORMAT(l.time,"%k:%i") as "time", DATE_FORMAT(l.date, "%d/%m/%Y") as "date" from logs l
+            inner join actions a on l.actionID = a.actionID
+            inner join personnel p on l.personID = p.personID
+            order by l.logID
+            ');
         return view('logs',['logs'=>$logs]);
     }
 
