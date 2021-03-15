@@ -32,7 +32,7 @@
     <div id="app" >
         <nav class="navbar navbar-expand-md navbar-light">
             <div>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
@@ -46,8 +46,9 @@
         @else
             @yield('sidenav')
         @endguest
-
-        <main id="main" class="main">
+        <main class="main">
+            <input onkeyup="searchSystem()" type="search" class="form-control rounded" id="search-table" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <div id="table-container"></div>
             @yield('content')
         </main>
         <footer>
