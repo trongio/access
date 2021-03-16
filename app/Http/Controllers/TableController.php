@@ -22,7 +22,8 @@ class TableController extends Controller
             select l.logID, p.PersonName, p.cardNum, a.actionName, TIME_FORMAT(l.time,"%k:%i") as "time", DATE_FORMAT(l.date, "%d/%m/%Y") as "date" from logs l
             inner join actions a on l.actionID = a.actionID
             inner join personnel p on l.personID = p.personID
-            order by l.logID
+            order by l.logID desc
+            limit 10000;
             ');
         return view('logs',['logs'=>$logs]);
     }

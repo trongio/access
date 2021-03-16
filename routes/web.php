@@ -58,11 +58,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //Tables
-
 Route::get('/personnel', [TableController::class, 'personnel']);
 Route::get('/logs', [TableController::class, 'logs']);
 Route::get('/departament', [TableController::class, 'departament']);
 Route::get('/attendance', [TableController::class, 'attendance']);
 
 
+//Loading
 
+Route::get('/loading', function () {
+    return view('loading');
+});
