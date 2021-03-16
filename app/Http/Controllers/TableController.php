@@ -23,7 +23,7 @@ class TableController extends Controller
             inner join actions a on l.actionID = a.actionID
             inner join personnel p on l.personID = p.personID
             order by l.logID desc
-            limit 10000;
+            limit 1000;
             ');
         return view('logs',['logs'=>$logs]);
     }
