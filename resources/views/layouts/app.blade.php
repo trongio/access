@@ -35,20 +35,14 @@
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-
                 @yield('topnav')
             </div>
         </nav>
-        @guest
-            @if (Route::has('login'))@endif
-
-            @if (Route::has('register'))@endif
-        @else
             @yield('sidenav')
-        @endguest
         <main class="main">
-            <input onkeyup="searchSystem()" type="search" class="form-control rounded" id="search-table" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <div id="table-container"></div>
+            @yield('searchBar')
+
+
             @yield('content')
         </main>
         <footer>
