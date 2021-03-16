@@ -1,33 +1,25 @@
-<table id="logsTable" class="table table-hover table-bordered table-sm border-dark">
+<table id="table" class="table table-hover table-bordered table-sm border-dark">
     <thead>
     <tr>
         <th scope="col">№</th>
         <th scope="col">Name</th>
         <th scope="col">Card №</th>
         <th scope="col">Action</th>
-        <th scope="col">Door</th>
         <th scope="col">Time</th>
         <th scope="col">Date</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">0</th>
-        <td>Giorgi Kakabadze</td>
-        <td>987546565</td>
-        <td>check in</td>
-        <td>9:00</td>
-        <td>18:00</td>
-    </tr>
-    @if(count($personnel)>0)
-        @foreach($personnel as $person)
+{{--    l.logID, p.PersonName, p.cardNum, a.actionName, l.time, l.date--}}
+    @if(count($logs)>0)
+        @foreach($logs as $log)
             <tr>
-                <th scope="row">{{$person->id}}</th>
-                <td>{{$person->name}}</td>
-                <td>{{$person->cardNum}}</td>
-                <td>{{$person->departmentName}}</td>
-                <td>{{$person->shiftStart}}</td>
-                <td>{{$person->shiftEnd}}</td>
+                <th scope="row">{{$log->logID}}</th>
+                <td>{{$log->PersonName}}</td>
+                <td>{{$log->cardNum}}</td>
+                <td>{{$log->actionName}}</td>
+                <td>{{$log->time}}</td>
+                <td>{{$log->date}}</td>
             </tr>
         @endforeach
     @else
