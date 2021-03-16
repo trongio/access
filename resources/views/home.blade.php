@@ -38,8 +38,6 @@
                     </li>
                 @endif
             @else
-        {{--Search Bar--}}
-
                 <li class="nav-item">
                     <a id="navbarDropdown" class="nav-link" href="#" >
                         {{ Auth::user()->username }}
@@ -68,4 +66,9 @@
         <a  onclick="getSegment('departament')" class="btn  p-3 bg-light rounded">Departament</a>
         <a  onclick="getSegment('attendance')" class="btn shadow-sm p-3 bg-light rounded">Monthly Attendance</a>
     </nav>
+@endsection
+
+@section('searchBar')
+    <input onkeyup="searchSystem()" type="search" class="form-control rounded" id="search-table" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+    <div id="table-container"></div>
 @endsection
