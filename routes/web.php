@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PersonnelTableController;
+use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,8 +43,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/personnel', [PersonnelTableController::class, 'index']);
-
 Route::get('/logs', function () {
     return view('logs');
 });
@@ -57,3 +55,17 @@ Route::get('/attendance', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Tables
+Route::get('/personnel', [TableController::class, 'personnel']);
+Route::get('/logs', [TableController::class, 'logs']);
+Route::get('/departament', [TableController::class, 'departament']);
+Route::get('/attendance', [TableController::class, 'attendance']);
+
+
+//Loading
+
+Route::get('/loading', function () {
+    return view('loading');
+});

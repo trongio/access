@@ -1,4 +1,4 @@
-<table id="personnelTable" class="table table-hover table-bordered table-sm border-dark">
+<table id="table" class="table table-hover table-bordered table-sm border-dark">
     <thead>
     <tr>
         <th scope="col">ID</th>
@@ -21,8 +21,8 @@
     @if(count($personnel)>0)
         @foreach($personnel as $person)
             <tr>
-                <th scope="row">{{$person->id}}</th>
-                <td>{{$person->name}}</td>
+                <th scope="row">{{$person->personid}}</th>
+                <td>{{$person->personName}}</td>
                 <td>{{$person->cardNum}}</td>
                 <td>{{$person->departmentName}}</td>
                 <td>{{$person->shiftStart}}</td>

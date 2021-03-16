@@ -32,88 +32,17 @@
     <div id="app" >
         <nav class="navbar navbar-expand-md navbar-light">
             <div>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="topnav collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                        @guest
-                            @if (Route::has('login'))@endif
-
-                            @if (Route::has('register'))@endif
-                        @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Personal</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Logs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Logs</a>
-                            </li>
-                        @endguest
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item">
-                                <div class="input-group rounded">
-                                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                                           aria-describedby="search-addon" />
-                                    <button onclick="search()" class="btn">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a id="navbarDropdown" class="nav-link" href="#" >
-                                    {{ Auth::user()->username }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+                @yield('topnav')
             </div>
         </nav>
-        @guest
-            @if (Route::has('login'))@endif
-
-            @if (Route::has('register'))@endif
-        @else
             @yield('sidenav')
-        @endguest
-        <main id="main" class="main">
+        <main class="main">
+            @yield('searchBar')
+
+
             @yield('content')
         </main>
         <footer>
