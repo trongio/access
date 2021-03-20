@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
 
@@ -60,8 +61,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Tables
 Route::get('/personnel', [TableController::class, 'personnel']);
 Route::get('/logs', [TableController::class, 'logs']);
-Route::get('/departament', [TableController::class, 'departament']);
+Route::get('/departments', [TableController::class, 'departments']);
 Route::get('/attendance', [TableController::class, 'attendance']);
+
+
+//Database manipulation
+Route::post('DelDeps', [DepartmentController::class, 'delete']);
 
 
 //Loading

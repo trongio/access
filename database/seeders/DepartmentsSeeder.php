@@ -15,6 +15,10 @@ class DepartmentsSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('departments')->insert([
+            'departmentName' => 'Free',
+        ]);
+        //needs to be removed after development
         for ($x = 0; $x <= 5; $x++) {
             DB::table('departments')->insert([
                 'departmentName' => Str::random(4),
