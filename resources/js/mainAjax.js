@@ -15,3 +15,25 @@ window.getSegment = function (button) {
         }
     });
 }
+
+window.DelDep=function(id){
+    var rowid= "#row"+id;
+    console.log(rowid);
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        type:"POST",
+        url: "/DelDeps",
+        dataType: 'json',
+        data:{DelID:id},
+        success: function (result){
+            $(rowid).remove();
+            alert(result)
+        },error:function(){
+            alert("error!!!!");
+        }
+    })
+}
