@@ -40,7 +40,12 @@ class TableController extends Controller
         return view('shifts',['shifts'=>$shifts]);
     }
 
-    public function attendance()
+    public function dailyAttendance()
+    {
+        return view('dailyAttendance');
+    }
+
+    public function monthlyAttendance()
     {
         $attendance = DB::select('select * from attendance');
         return view('attendance',['attendance'=>$attendance]);
