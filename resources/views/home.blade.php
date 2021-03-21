@@ -63,7 +63,8 @@
     <nav class="sidenav ">
         <a  onclick="getSegment('personnel')" class=" btn p-3 bg-light rounded">Personnel</a>
         <a  onclick="getSegment('logs')" class="btn  p-3 bg-light rounded">Logs</a>
-        <a  onclick="getSegment('departments')" class="btn  p-3 bg-light rounded">Departament</a>
+        <a  onclick="getSegment('departments')" class="btn  p-3 bg-light rounded">Departaments</a>
+        <a  onclick="getSegment('shifts')" class="btn  p-3 bg-light rounded">shifts</a>
         <a  onclick="getSegment('attendance')" class="btn shadow-sm p-3 bg-light rounded">Monthly Attendance</a>
     </nav>
 @endsection
@@ -71,4 +72,9 @@
 @section('searchBar')
     <input onkeyup="searchSystem()" type="search" class="form-control rounded" id="search-table" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
     <div id="table-container"></div>
+@endsection
+
+@section('alets')
+<div id="alertSuccess" class="none alert alert-success" role="alert"></div>
+<div id="alertDanger" class="none alert alert-danger" role="alert"></div>
 @endsection

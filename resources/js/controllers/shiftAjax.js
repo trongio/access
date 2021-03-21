@@ -1,6 +1,6 @@
-window.delDep=function(id){
+window.delShift=function(id){
     var rowid= "#row"+id;
-    var ans=confirm("Are you sure you want to delete department "+ id +" ?");
+    var ans=confirm("Are you sure you want to delete shift "+ id +" ?");
     if (ans) {
         $.ajaxSetup({
             headers: {
@@ -9,17 +9,20 @@ window.delDep=function(id){
         });
         $.ajax({
             type: "POST",
-            url: "/delDep",
+            url: "/delShift",
             dataType: 'json',
             data: {delID: id},
             success: function (responce) {
                 $(rowid).remove();
+
                 var alertSuccess=document.getElementById('alertSuccess');
                 alertSuccess.innerHTML=responce;
                 alertSuccess.classList.remove('none');
                 setTimeout(function (){
                     alertSuccess.classList.add('none');
                 },5000);
+
+                alert(result)
             }, error: function () {
                 alert("error!!!!");
             }
@@ -27,9 +30,10 @@ window.delDep=function(id){
     }
 }
 
-window.addDep=function(){
-    var depName= document.getElementById("depName").value;
-    console.log(depName);
+window.addShift=function(){
+    var shiftName= document.getElementById("shiftName").value;
+    var shiftStart= document.getElementById("shiftStart").value;
+    var shiftEnd= document.getElementById("shiftEnd").value;
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -37,25 +41,25 @@ window.addDep=function(){
     });
     $.ajax({
         type:"POST",
-        url: "/addDep",
+        url: "/addShift",
         dataType: 'json',
-        data:{depName:depName},
+        data:{shiftName,shiftStart,shiftEnd},
         success: function (responce){
-            if (depName){
+            if (responce["shiftName"]===null){
+                var alertDanger=document.getElementById('alertDanger');
+                alertDanger.innerHTML="Shift Name was empty";
+                alertDanger.classList.remove('none');
+                setTimeout(function (){
+                    alertDanger.classList.add('none');
+                },5000);
+            } else {
                 var alertSuccess=document.getElementById('alertSuccess');
                 alertSuccess.innerHTML=responce;
                 alertSuccess.classList.remove('none');
                 setTimeout(function (){
                     alertSuccess.classList.add('none');
                 },5000);
-                getSegment('departments')
-            } else {
-                var alertDanger=document.getElementById('alertDanger');
-                alertDanger.innerHTML="Department Name was empty";
-                alertDanger.classList.remove('none');
-                setTimeout(function (){
-                    alertDanger.classList.add('none');
-                },5000);
+                getSegment('shifts');
             }
         },error:function(){
             alert("error!!!!");
