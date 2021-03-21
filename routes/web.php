@@ -66,11 +66,11 @@ Route::get('/attendance', [TableController::class, 'attendance']);
 
 
 //Database manipulation
-Route::post('DelDeps', [DepartmentController::class, 'delete']);
+Route::post('delDep', [DepartmentController::class, 'delete']);
+Route::post('addDep', [DepartmentController::class, 'add']);
 
 
 //Loading
-
 Route::get('/loading', function () {
     return view('loading');
 });
