@@ -16,9 +16,33 @@ window.getSegment = function (button) {
     });
 }
 
-window.DelDep=function(id){
+window.delDep=function(id){
     var rowid= "#row"+id;
-    console.log(rowid);
+    var ans=confirm("Are you sure you want to delete "+ rowid + "department?");
+    if (ans) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: "/delDep",
+            dataType: 'json',
+            data: {delID: id},
+            success: function (result) {
+                $(rowid).remove();
+                alert(result)
+            }, error: function () {
+                alert("error!!!!");
+            }
+        })
+    }
+}
+
+window.addDep=function(){
+    var depName= document.getElementById("depName").value;
+    console.log(depName);
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -26,12 +50,12 @@ window.DelDep=function(id){
     });
     $.ajax({
         type:"POST",
-        url: "/DelDeps",
+        url: "/addDep",
         dataType: 'json',
-        data:{DelID:id},
-        success: function (result){
-            $(rowid).remove();
-            alert(result)
+        data:{depName:depName},
+        success: function (responce){
+            getSegment('departments')
+            console.log(responce)
         },error:function(){
             alert("error!!!!");
         }
