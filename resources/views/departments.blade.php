@@ -1,4 +1,3 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Department</button>
 <div class="table-responsive">
 <table id="table" class="table table-hover table-bordered table-sm">
     <thead>
@@ -17,7 +16,9 @@
                     <td>{{$department->departmentName}}</td>
                     <td class="text-right">
                         @if($department->departmentID>1)
-                            <button class="btn btn-danger" onclick="DelDep({{$department->departmentID}})">Delete</button>
+                            <button class="btn btn-danger" onclick="delDep({{$department->departmentID}})">Delete</button>
+                        @else
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Department</button>
                         @endif
                     </td>
                 </tr>
@@ -34,7 +35,12 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            ...
+                <div class="p-5 form-group">
+                    <label for="DepName">Department Name</label>
+                    <input type="text" class="form-control" id="depName" placeholder="Enter Department Name">
+                    <small class="form-text text-muted">Write new department name</small>
+                </div>
+            <button onclick="addDep()" data-toggle="modal" class="btn btn-primary" data-target=".bd-example-modal-lg">Add</button>
         </div>
     </div>
 </div>

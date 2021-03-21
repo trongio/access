@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,15 +63,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/personnel', [TableController::class, 'personnel']);
 Route::get('/logs', [TableController::class, 'logs']);
 Route::get('/departments', [TableController::class, 'departments']);
+Route::get('/shifts', [TableController::class, 'shifts']);
 Route::get('/attendance', [TableController::class, 'attendance']);
 
+//Database manipulation Department
+Route::post('delDep', [DepartmentController::class, 'delete']);
+Route::post('addDep', [DepartmentController::class, 'add']);
 
-//Database manipulation
-Route::post('DelDeps', [DepartmentController::class, 'delete']);
-
+//Database manipulation shifts
+Route::post('delShift', [ShiftController::class, 'delete']);
+Route::post('addShift', [ShiftController::class, 'add']);
 
 //Loading
-
 Route::get('/loading', function () {
     return view('loading');
 });
