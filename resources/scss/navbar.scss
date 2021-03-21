@@ -4,6 +4,7 @@
     position: fixed;
     background-color: color(grey,slighter);
     padding-left: 48px;
+    z-index: 1;
 
     div:first-child{
         display: flex;
