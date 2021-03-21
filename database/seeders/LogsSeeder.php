@@ -15,12 +15,12 @@ class LogsSeeder extends Seeder
      */
     public function run()
     {
-        for ($x = 0; $x <= 1000; $x++) {
+        for ($x = 0; $x <= 10000; $x++) {
             DB::table('logs')->insert([
                 'personID'   => rand(1,100),
                 'actionID' => rand(1,2),
                 'time' => rand(9, 18) . ':' . rand(0, 59),
-                'date' => "2021-01-25",
+                'date' => "2021-01-".rand(10,20),
             ]);
         }
     }

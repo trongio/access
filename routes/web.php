@@ -64,7 +64,8 @@ Route::get('/personnel', [TableController::class, 'personnel']);
 Route::get('/logs', [TableController::class, 'logs']);
 Route::get('/departments', [TableController::class, 'departments']);
 Route::get('/shifts', [TableController::class, 'shifts']);
-Route::get('/attendance', [TableController::class, 'attendance']);
+Route::get('/dailyAttendance', [TableController::class, 'dailyAttendance']);
+Route::get('/monthlyAttendance', [TableController::class, 'monthlyAttendance']);
 
 //Database manipulation Department
 Route::post('delDep', [DepartmentController::class, 'delete']);
