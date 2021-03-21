@@ -51,7 +51,7 @@ window.addDep=function(){
                 getSegment('departments')
             } else {
                 var alertDanger=document.getElementById('alertDanger');
-                alertDanger.innerHTML="Department Name was empty";
+                alertDanger.innerHTML="Department <span class=\"rounded text-white bg-dark font-weight-bold\">Name</span> was empty";
                 alertDanger.classList.remove('none');
                 setTimeout(function (){
                     alertDanger.classList.add('none');

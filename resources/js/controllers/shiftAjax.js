@@ -45,9 +45,13 @@ window.addShift=function(){
         dataType: 'json',
         data:{shiftName,shiftStart,shiftEnd},
         success: function (responce){
-            if (responce["shiftName"]===null){
+            if (responce["shiftName"]===null || responce["shiftStart"] >= responce["shiftEnd"]){
                 var alertDanger=document.getElementById('alertDanger');
-                alertDanger.innerHTML="Shift Name was empty";
+                if (responce["shiftName"]===null) {
+                    alertDanger.innerHTML = "Shift <span class=\"rounded text-white bg-dark font-weight-bold\">Name</span> was empty"
+                } else{
+                    alertDanger.innerHTML = "Shift <span class=\"rounded text-white bg-dark font-weight-bold\">Start</span> cannot be after the <span class=\"rounded text-white bg-dark font-weight-bold\">End</span>"
+                }
                 alertDanger.classList.remove('none');
                 setTimeout(function (){
                     alertDanger.classList.add('none');
