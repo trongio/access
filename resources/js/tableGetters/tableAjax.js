@@ -12,6 +12,7 @@ window.getSegment = function (button) {
         type: 'GET',
         success: function success(result) {
             $("#table-container").html(result);
+            sortTable();
         }
     });
 }

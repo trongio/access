@@ -71,7 +71,6 @@
 @endsection
 
 @section('searchBar')
-    <input onkeyup="searchSystem()" type="search" class="form-control rounded" id="search-table" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
     <div id="table-container"></div>
 @endsection
 
