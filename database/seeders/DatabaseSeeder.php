@@ -20,10 +20,12 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(ActionsSeeder::class);
 
-    //↓↓↓ need to be removed (just for testing) ↓↓↓
-        $this->call(PersonnelSeeder::class);
+        //↓↓↓ need to be cleaned up (delete random generation) ↓↓↓
         $this->call(DepartmentsSeeder::class);
         $this->call(ShiftsSeeder::class);
+
+        //↓↓↓ need to be removed (just for testing) ↓↓↓
+        $this->call(PersonnelSeeder::class);
         $this->call(LogsSeeder::class);
     }
 }

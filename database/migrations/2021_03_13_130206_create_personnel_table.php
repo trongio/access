@@ -17,8 +17,8 @@ class CreatePersonnelTable extends Migration
             $table->id('personID');
             $table->string('personName');
             $table->integer('cardNum');
-            $table->integer('shiftID');
-            $table->integer('departmentID');
+            $table->integer('shiftID')->default(1);
+            $table->integer('departmentID')->default(1);
         });
     }
 

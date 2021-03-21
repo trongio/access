@@ -28,10 +28,16 @@ class TableController extends Controller
         return view('logs',['logs'=>$logs]);
     }
 
-    public function departament()
+    public function departments()
     {
-        $departament = DB::select('select * from departament');
-        return view('departament',['departament'=>$departament]);
+        $departments = DB::select('select * from departments');
+        return view('departments',['departments'=>$departments]);
+    }
+
+    public function shifts()
+    {
+        $shifts = DB::select('select shiftID,shiftName,TIME_FORMAT(shiftStart,"%k:%i") as "shiftStart",TIME_FORMAT(shiftEnd,"%k:%i") as "shiftEnd" from shifts');
+        return view('shifts',['shifts'=>$shifts]);
     }
 
     public function attendance()

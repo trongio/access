@@ -14,7 +14,11 @@ class ShiftsSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+        {DB::table('shifts')->insert([
+            'shiftName' => 'Default',
+            'shiftStart' => 9 . ':' . 0,
+            'shiftEnd' => 18 . ':' . 0,
+        ]);
         for ($x = 0; $x <= 5; $x++) {
             DB::table('shifts')->insert([
                 'shiftName' => Str::random(5),
