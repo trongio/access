@@ -14,6 +14,7 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
     </script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -29,6 +30,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
+@yield('alets')
     <div id="app" >
         <nav class="navbar navbar-expand-md navbar-light">
             <div>
@@ -40,6 +42,7 @@
         </nav>
             @yield('sidenav')
         <main class="main">
+
             @yield('searchBar')
 
             @yield('content')

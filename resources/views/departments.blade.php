@@ -35,13 +35,11 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form class="p-5">
-                <div class="form-group">
+                <div class="p-5 form-group">
                     <label for="DepName">Department Name</label>
                     <input type="text" class="form-control" id="depName" placeholder="Enter Department Name">
                     <small class="form-text text-muted">Write new department name</small>
                 </div>
-            </form>
             <button onclick="addDep()" data-toggle="modal" class="btn btn-primary" data-target=".bd-example-modal-lg">Add</button>
         </div>
     </div>

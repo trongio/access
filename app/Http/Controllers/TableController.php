@@ -34,6 +34,12 @@ class TableController extends Controller
         return view('departments',['departments'=>$departments]);
     }
 
+    public function shifts()
+    {
+        $shifts = DB::select('select shiftID,shiftName,TIME_FORMAT(shiftStart,"%k:%i") as "shiftStart",TIME_FORMAT(shiftEnd,"%k:%i") as "shiftEnd" from shifts');
+        return view('shifts',['shifts'=>$shifts]);
+    }
+
     public function attendance()
     {
         $attendance = DB::select('select * from attendance');
