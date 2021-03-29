@@ -55,14 +55,14 @@ window.addShift=function(){
                 alertDanger.classList.remove('none');
                 setTimeout(function (){
                     alertDanger.classList.add('none');
-                },5000);
+                },7500);
             } else {
                 var alertSuccess=document.getElementById('alertSuccess');
                 alertSuccess.innerHTML=responce;
                 alertSuccess.classList.remove('none');
                 setTimeout(function (){
                     alertSuccess.classList.add('none');
-                },5000);
+                },7500);
                 getSegment('shifts');
             }
         },error:function(){
