@@ -22,7 +22,7 @@ class AttendanceController extends Controller
 //                for ($i = strtotime($response['startDate']); $i <= strtotime($response['endDate']); $i+=60*60*24){
 //                    $id=$idarr['personID'];
 
-                    $dailyAttendance = DB::table(DB::raw ("
+                    $dailyAttendance = DB::select("
 select l.row                                 as 'row',
        l.logID                               as 'logID',
        l.personID                            as 'personID',
@@ -45,7 +45,7 @@ from (select row_number() over (order by l2.logID) as 'row', l2.logID, l2.person
                from access.logs l1
                where l1.personID = '50'
                  and l1.date = '2021/01/13') m on m.row = l.row
-where l.actionID < m.actionID;") ->select())->get();
+where l.actionID < m.actionID;");
 //
 //                    $cnt=0;
 //
