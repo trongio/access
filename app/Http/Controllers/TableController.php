@@ -42,7 +42,7 @@ class TableController extends Controller
 
     public function dailyAttendance()
     {
-        return view('dailyAttendance');
+        return view('.attendance.dailyAttendance');
     }
 
     public function monthlyAttendance()
