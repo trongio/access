@@ -18,12 +18,17 @@ class ShiftsSeeder extends Seeder
             'shiftName' => 'Default',
             'shiftStart' => 9 . ':' . 0,
             'shiftEnd' => 18 . ':' . 0,
+            'workTime' => 9 . '.' . 0
         ]);
         for ($x = 0; $x <= 5; $x++) {
+            $m = rand(1, 9) . ':' . rand(0, 59);
+            $n = rand(10, 24) . ':' . rand(0, 59);
             DB::table('shifts')->insert([
                 'shiftName' => Str::random(5),
-                'shiftStart' => rand(1, 9) . ':' . rand(0, 59),
-                'shiftEnd' => rand(10, 24) . ':' . rand(0, 59),
+                'shiftStart' => $m,
+                'shiftEnd' => $n,
+                'workTime' => ((strtotime($n) - strtotime($m)) / 3600).((strtotime($n) - strtotime($m)) / 60 % 60),
+
             ]);
         }
     }
