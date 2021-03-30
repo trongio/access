@@ -63,13 +63,14 @@ class AttendanceController extends Controller
                         'personID'=>$id,
                         'workedTime'=>$hours,
                         'overtime' => `'`.$overtime.`'`,
-                        'Date'=>date("d-m-Y", $i)
+                        'date'=>date("d-m-Y", $i)
                     ];
                     $k++;
                 }
             }
         }
-        return response()->json($finalTable);
+        return response($finalTable);
+        /*return view('/attendance.dailyAttendance', ['dailyAttendance' => $finalTable]);*/
     }
 
     public function monthly(Request $request){

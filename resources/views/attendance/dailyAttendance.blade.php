@@ -22,20 +22,20 @@
             <th scope="col">Date</th>
             <th scope="col">Person Name</th>
             <th scope="col">Work (hr)</th>
-            <th scope="col">Break (hr)</th>
             <th scope="col">Overtime (hr)</th>
         </tr>
     </thead>
     <tbody>
 {{--    l.personID, l.date, l.time, l.actionID--}}
     @if($_POST)
+        <script>console.log('Hey there')</script>
     @if(count($dailyAttendance)>0)
         @foreach($dailyAttendance as $Attendance)
             <tr>
                 <th scope="row">{{$Attendance->personID}}</th>
+                <td>{{$Attendance->personName}}</td>
+                <td>{{$Attendance->workedTime}}</td>
                 <td>{{$Attendance->date}}</td>
-                <td>{{$Attendance->time}}</td>
-                <td>{{$Attendance->actionID}}</td>
             </tr>
         @endforeach
 {{--    {{$dailyAttendance}}--}}
