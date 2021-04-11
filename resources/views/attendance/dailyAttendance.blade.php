@@ -19,6 +19,7 @@
 <table id="table" class="table table-hover table-bordered table-sm">
     <thead>
         <tr>
+            <th scope="col">ID</th>
             <th scope="col">Date</th>
             <th scope="col">Person Name</th>
             <th scope="col">Work (hr)</th>
@@ -27,21 +28,19 @@
     </thead>
     <tbody>
 {{--    l.personID, l.date, l.time, l.actionID--}}
-    @if($_POST)
-        <script>console.log('Hey there')</script>
     @if(count($dailyAttendance)>0)
+
         @foreach($dailyAttendance as $Attendance)
             <tr>
                 <th scope="row">{{$Attendance->personID}}</th>
+                <td>{{$Attendance->date}}</td>
                 <td>{{$Attendance->personName}}</td>
                 <td>{{$Attendance->workedTime}}</td>
-                <td>{{$Attendance->date}}</td>
+                <td>{{$Attendance->overtime}}</td>
             </tr>
         @endforeach
-{{--    {{$dailyAttendance}}--}}
     @else
         <h3>No personnel</h3>
-    @endif
     @endif
     </tbody>
 

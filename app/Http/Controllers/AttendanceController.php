@@ -69,7 +69,8 @@ class AttendanceController extends Controller
                 }
             }
         }
-        return response($finalTable);
+        $cont=new TableController();
+        return $cont->dailyAttendance($finalTable);
         /*return view('/attendance.dailyAttendance', ['dailyAttendance' => $finalTable]);*/
     }
 
