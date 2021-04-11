@@ -21,6 +21,7 @@ class LogsSeeder extends Seeder
                 'actionID' => rand(1,2),
                 'time' => rand(9, 18) . ':' . rand(0, 59),
                 'date' => "2021-01-".rand(10,20),
+
             ]);
         }
     }

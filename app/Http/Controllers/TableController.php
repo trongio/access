@@ -40,9 +40,9 @@ class TableController extends Controller
         return view('shifts',['shifts'=>$shifts]);
     }
 
-    public function dailyAttendance()
+    public function dailyAttendance($dailyAttendance=[])
     {
-        return view('dailyAttendance');
+        return view('.attendance.dailyAttendance',['dailyAttendance'=>$dailyAttendance]);
     }
 
     public function monthlyAttendance()
