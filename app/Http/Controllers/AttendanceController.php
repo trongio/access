@@ -13,6 +13,9 @@ class AttendanceController extends Controller
             'startDate' => $request->startDate,
             'endDate' => $request->endDate,
         );
+        if(!DB::select('select * from logs a where a.date >= ? and a.date <= ?;', [$response['startDate'], $response['endDate']])){
+            return null;
+        }
         $finalTable=[];
         if ($response['status']=='success' && $response['startDate']<=$response['endDate']) {
             $personnelID=DB::select('select p.personID, p.personName, s.workTime from access.personnel p join shifts s on p.shiftID = s.shiftID');

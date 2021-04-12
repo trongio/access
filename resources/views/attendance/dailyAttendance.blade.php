@@ -19,7 +19,7 @@
 <table id="table" class="table table-hover table-bordered table-sm">
     <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col">Person ID</th>
             <th scope="col">Date</th>
             <th scope="col">Person Name</th>
             <th scope="col">Work (hr)</th>
