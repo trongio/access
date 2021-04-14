@@ -1,6 +1,6 @@
 window.sortTable = function (){
     $('#table').DataTable({
-        'lengthMenu': [50, 100, 500, 1000],
+        'lengthMenu': [10, 50, 100, 1000],
         'stateSave': true,
         'stateDuration': 60 * 60 * 24 * 365,
         'language': {

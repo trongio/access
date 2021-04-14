@@ -15,34 +15,35 @@
 
     </div>
 </div>
-
-<table id="table" class="table table-hover table-bordered table-sm">
-    <thead>
-        <tr>
-            <th scope="col">Person ID</th>
-            <th scope="col">Date</th>
-            <th scope="col">Person Name</th>
-            <th scope="col">Work (hr)</th>
-            <th scope="col">Overtime (hr)</th>
-        </tr>
-    </thead>
-    <tbody>
-{{--    l.personID, l.date, l.time, l.actionID--}}
-    @if(count($dailyAttendance)>0)
-
-        @foreach($dailyAttendance as $Attendance)
+@if(count($dailyAttendance)>0)
+    <table id="table" class="table table-hover table-bordered table-sm">
+        <thead>
             <tr>
-                <th scope="row">{{$Attendance->personID}}</th>
-                <td>{{$Attendance->date}}</td>
-                <td>{{$Attendance->personName}}</td>
-                <td>{{$Attendance->workedTime}}</td>
-                <td>{{$Attendance->overtime}}</td>
+                <th scope="col">Person ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Person Name</th>
+                <th scope="col">Work (hr)</th>
+                <th scope="col">Overtime (hr)</th>
             </tr>
-        @endforeach
-    @else
-        <h3>No personnel</h3>
-    @endif
-    </tbody>
+        </thead>
+        <tbody>
+    {{--    l.personID, l.date, l.time, l.actionID--}}
 
-</table>
+
+            @foreach($dailyAttendance as $Attendance)
+                <tr>
+                    <th scope="row">{{$Attendance->personID}}</th>
+                    <td>{{$Attendance->date}}</td>
+                    <td>{{$Attendance->personName}}</td>
+                    <td>{{$Attendance->workedTime}}</td>
+                    <td>{{$Attendance->overtime}}</td>
+                </tr>
+            @endforeach
+
+        </tbody>
+
+    </table>
+@else
+    <h3>Please select interval</h3>
+@endif
 
