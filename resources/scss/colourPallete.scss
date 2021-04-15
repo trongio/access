@@ -16,13 +16,18 @@ $palettes: (
         base: hsl(206, 11%, 45%),
         light: 	hsl(221, 12%, 69%),
         lighter: hsl(219, 13%, 78%),
-        slighter: #f8f9fa,
+        slighter: #f8f9fa
 
     ),
     black:(
         blackt03: rgba(0,0,0,.3),
-        base: black,
+        base: black
     ),
+    grey_blue:(
+        text: rgba(67, 82, 112, 1),
+        button: rgba(239, 241, 245, 1),
+        navigation: rgba(209, 214, 224, 1)
+    )
 );
 
 @function color($color,$tone){

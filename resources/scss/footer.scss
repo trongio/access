@@ -1,5 +1,9 @@
 footer {
     text-align: center;
     font-family: "Ubuntu";
-    background: color(gray,slighter);
+    background: color(grey_blue, navigation);
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    margin-left: 49vw;
 }

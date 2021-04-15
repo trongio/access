@@ -63,7 +63,7 @@
     <nav class="sidenav ">
         <a  onclick="getSegment('personnel')" class=" btn p-3 bg-light rounded">Personnel</a>
         <a  onclick="getSegment('logs')" class="btn  p-3 bg-light rounded">Logs</a>
-        <a  onclick="getSegment('departments')" class="btn  p-3 bg-light rounded">Departaments</a>
+        <a  onclick="getSegment('departments')" class="btn  p-3 bg-light rounded">Departments</a>
         <a  onclick="getSegment('shifts')" class="btn  p-3 bg-light rounded">shifts</a>
         <a  onclick="getSegment('dailyAttendance')" class="btn shadow-sm p-3 bg-light rounded">Daily Attendance</a>
         <a  onclick="getSegment('monthlyAttendance')" class="btn shadow-sm p-3 bg-light rounded">Monthly Attendance</a>
