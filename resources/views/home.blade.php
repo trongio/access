@@ -47,7 +47,7 @@
         <a  onclick="getSegment('personnel')">Personnel</a>
         <a  onclick="getSegment('logs')">Logs</a>
         <a  onclick="getSegment('departments')">Departments</a>
-        <a  onclick="getSegment('shifts')">shifts</a>
+        <a  onclick="getSegment('shifts')">Shifts</a>
         <a  onclick="getSegment('dailyAttendance')">Daily Attendance</a>
         <a  onclick="getSegment('monthlyAttendance')">Monthly Attendance</a>
     </nav>

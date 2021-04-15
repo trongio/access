@@ -33,13 +33,13 @@ $palettes: (
     )
 );
 
-@function color($color,$tone){
+@function color($color, $tone){
 
-    @if map-has-key($palettes,$color){
-        $color: map-get($palettes,$color);
+    @if map-has-key($palettes, $color){
+        $color: map-get($palettes, $color);
 
-        @if map-has-key($color,$tone){
-            $tone: map-get($color,$tone);
+        @if map-has-key($color, $tone){
+            $tone: map-get($color, $tone);
             @return $tone;
         }
         @return null;
