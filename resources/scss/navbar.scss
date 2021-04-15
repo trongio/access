@@ -1,27 +1,39 @@
 .navbar {
     top: 0;
     width: 100%;
+    height: 80px;
     position: fixed;
-    background-color: color(grey,slighter);
-    padding-left: 48px;
+    background-color: color(grey_blue, navigation);
+    color: color(grey_blue, text);
     z-index: 1;
 
-    div:first-child{
-        display: flex;
-        width: 100%;
-    }
-
     .topnav {
-        padding-left: 65px;
-        padding-right: 10px;
+        .right_topnav{
+            display: flex;
+            position: absolute;
+            right: 25px;
 
-        .input-group{
-            height: 20px;
-        }
+            a{
+                width: 100px;
+                height: 35px;
+                background-color: color(grey_blue, button);
+                color: color(grey_blue, text);
+                border-radius: 15px;
+                margin-left: 15px;
+                font-size: 14px;
+                text-align: center;
+                text-transform: capitalize;
+                display: block;
+                padding: .5rem 1rem;
+                text-decoration: none;
+                transition: 0.4s;
 
-        span {
-            display: block;
-            padding: 10px;
+                &:hover {
+                    color: color(grey_blue, text_hv);
+                    background-color: color(grey_blue, button_hv);
+                    transition: 0.4s;
+                }
+            }
         }
     }
 }

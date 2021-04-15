@@ -1,22 +1,33 @@
 .sidenav {
-    height: 100%;
-    width: 160px;
+    height: 530px;
+    width: 250px;
     position: fixed;
     z-index: 1;
-    top: 56px;
+    top: 80px;
     left: 0;
-    background-color: color(grey,slighter);
+    background-color: color(grey_blue, side_nav);
     overflow-x: hidden;
+    border-radius: 0 0 20px 0;
+    padding: 35px 20px 35px 20px;
 
     a {
-        padding: 6px 8px 6px 16px;
+        padding: 15px 11px;
+        margin-bottom: 20px;
         text-decoration: none;
-        font-size: 22px;
-        color: color(grey,base);
+        font-size: 21px;
+        background-color: color(grey_blue, button);
+        color: color(grey_blue, text);
         display: block;
+        border-radius: 15px;
+        width: 210px;
+        height: 60px;
+        cursor: pointer;
+        transition: 0.4s;
 
         &:hover {
-            color: color(grey,darker);
+            color: color(grey_blue, text_hv);
+            background-color: color(grey_blue, button_hv);
+            transition: 0.4s;
         }
     }
 }

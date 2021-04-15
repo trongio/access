@@ -1,29 +1,14 @@
 @extends('layouts.app')
 
 @section('topnav')
-    <div class="topnav collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Left Side Of Navbar -->
-        <ul class="navbar-nav mr-auto">
-
-            @guest
-                @if (Route::has('login'))@endif
-
-                @if (Route::has('register'))@endif
-            @else
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Personal</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logs</a>
-                </li>
-            @endguest
-        </ul>
-
-        <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="topnav collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Right Side Of Navbar -->
+            <div>
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+            </div>
             <!-- Authentication Links -->
             @guest
                 @if (Route::has('login'))
@@ -38,13 +23,11 @@
                     </li>
                 @endif
             @else
-                <li class="nav-item">
-                    <a id="navbarDropdown" class="nav-link" href="#" >
+                <div class="right_topnav">
+                    <a id="navbarDropdown" href="#" >
                         {{ Auth::user()->username }}
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}"
+                    <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
@@ -53,20 +36,20 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                </li>
+                </div>
             @endguest
-        </ul>
-    </div>
+        </div>
+    </nav>
 @endsection
 
 @section('sidenav')
     <nav class="sidenav ">
-        <a  onclick="getSegment('personnel')" class=" btn p-3 bg-light rounded">Personnel</a>
-        <a  onclick="getSegment('logs')" class="btn  p-3 bg-light rounded">Logs</a>
-        <a  onclick="getSegment('departments')" class="btn  p-3 bg-light rounded">Departments</a>
-        <a  onclick="getSegment('shifts')" class="btn  p-3 bg-light rounded">shifts</a>
-        <a  onclick="getSegment('dailyAttendance')" class="btn shadow-sm p-3 bg-light rounded">Daily Attendance</a>
-        <a  onclick="getSegment('monthlyAttendance')" class="btn shadow-sm p-3 bg-light rounded">Monthly Attendance</a>
+        <a  onclick="getSegment('personnel')">Personnel</a>
+        <a  onclick="getSegment('logs')">Logs</a>
+        <a  onclick="getSegment('departments')">Departments</a>
+        <a  onclick="getSegment('shifts')">shifts</a>
+        <a  onclick="getSegment('dailyAttendance')">Daily Attendance</a>
+        <a  onclick="getSegment('monthlyAttendance')">Monthly Attendance</a>
     </nav>
 @endsection
 

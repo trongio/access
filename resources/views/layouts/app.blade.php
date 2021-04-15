@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -30,14 +30,7 @@
 <body>
 @yield('alets')
     <div id="app" >
-        <nav class="navbar navbar-expand-md navbar-light">
-            <div>
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                @yield('topnav')
-            </div>
-        </nav>
+            @yield('topnav')
             @yield('sidenav')
         <main class="main">
 

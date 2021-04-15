@@ -25,8 +25,11 @@ $palettes: (
     ),
     grey_blue:(
         text: rgba(67, 82, 112, 1),
+        text_hv: rgba(255, 255, 255, 1),
         button: rgba(239, 241, 245, 1),
-        navigation: rgba(209, 214, 224, 1)
+        button_hv: rgba(163, 173, 194, 1),
+        navigation: rgba(209, 214, 224, 1),
+        side_nav: rgba(194, 201, 214, 1)
     )
 );
 

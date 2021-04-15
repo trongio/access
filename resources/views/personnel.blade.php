@@ -10,14 +10,6 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">0</th>
-        <td>Giorgi Kakabadze</td>
-        <td>987546565</td>
-        <td>ALL</td>
-        <td>9:00</td>
-        <td>18:00</td>
-    </tr>
     @if(count($personnel)>0)
         @foreach($personnel as $person)
             <tr>
