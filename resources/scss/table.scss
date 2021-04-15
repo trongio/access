@@ -1,0 +1,40 @@
+#table-container{
+
+    #table_wrapper{
+        #table_length{
+            color: color(grey_blue, text);
+
+            select{
+                border: 1px solid color(grey_blue, side_nav);
+                border-radius: 8px;
+            }
+        }
+        #table_filter{
+            color: color(grey_blue, text);
+
+            input{
+                border: 1px solid color(grey_blue, side_nav);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    table{
+        border-bottom: 1px solid color(grey_blue, side_nav);
+        color: color(grey_blue, text);
+
+        th{
+            border-bottom: 1px solid color(grey_blue, side_nav);
+        }
+
+        tbody{
+            tr{
+
+                &:hover{
+                    background-color: color(grey_blue, button);
+                }
+            }
+        }
+
+    }
+}
