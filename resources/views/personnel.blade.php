@@ -4,7 +4,7 @@
         <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Card №</th>
-        <th scope="col">Departament</th>
+        <th scope="col">Department</th>
         <th scope="col">Shift start</th>
         <th scope="col">Shift end</th>
     </tr>

@@ -44,12 +44,12 @@
 
 @section('sidenav')
     <nav class="sidenav ">
-        <a  onclick="getSegment('personnel')">Personnel</a>
-        <a  onclick="getSegment('logs')">Logs</a>
-        <a  onclick="getSegment('departments')">Departments</a>
-        <a  onclick="getSegment('shifts')">Shifts</a>
-        <a  onclick="getSegment('dailyAttendance')">Daily Attendance</a>
-        <a  onclick="getSegment('monthlyAttendance')">Monthly Attendance</a>
+        <a  onclick="getSegment('personnel')" id="personnel">Personnel</a>
+        <a  onclick="getSegment('logs')" id="logs">Logs</a>
+        <a  onclick="getSegment('departments')" id="departments">Departments</a>
+        <a  onclick="getSegment('shifts')" id="shifts">Shifts</a>
+        <a  onclick="getSegment('dailyAttendance')" id="dailyAttendance">Daily Attendance</a>
+        <a  onclick="getSegment('monthlyAttendance')" id="monthlyAttendance">Monthly Attendance</a>
     </nav>
 @endsection
 

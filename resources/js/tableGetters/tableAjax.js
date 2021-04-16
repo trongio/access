@@ -16,4 +16,6 @@ window.getSegment = function (button,data=null) {
             sortTable();
         }
     });
+    $('.sidenav a').attr('class', '');
+    $('#' + button).attr('class', 'btn_checked');
 }

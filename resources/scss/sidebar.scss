@@ -35,6 +35,23 @@
             transition: 0.4s;
         }
     }
+    .btn_checked{
+        margin: 0;
+        position: relative;
+        background-color: color(grey_blue, button_hv);
+        color: color(grey_blue, text_hv);
+        border-bottom: none;
+        /*border-left: 3px solid color(grey_blue, meddium_yellow);*/
+
+        &:before{
+            height: 2px;
+            width: 100%;
+            bottom: 0;
+            position: absolute;
+            background: linear-gradient(90deg, color(grey_blue, meddium_yellow) 30%, color(grey_blue, button) 30%);
+            content: '';
+        }
+    }
 }
 
 
