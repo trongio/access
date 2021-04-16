@@ -17,7 +17,7 @@ window.dailyAttendance = function (){
             }
             else{
                 var alertDanger=document.getElementById('alertDanger');
-                alertDanger.innerHTML="<span class=\"rounded text-white bg-dark font-weight-bold p-1\">Data</span> has not been found on this date interval";
+                alertDanger.innerHTML="<span class=\"rounded text-white bg-dark font-weight-bold p-1\">Data</span> has not been found in this interval";
                 alertDanger.classList.remove('none');
                 setTimeout(function (){
                     alertDanger.classList.add('none');
