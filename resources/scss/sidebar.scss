@@ -38,7 +38,7 @@
     .btn_checked{
         margin: 0;
         position: relative;
-        background-color: color(grey_blue, button_hv);
+        background: rgba(163, 173, 194, 0.6) repeating-linear-gradient(45deg, rgba(239, 241, 245, 0.1), rgba(239, 241, 245, 0.1) 0.9px, rgba(163, 173, 194, 0.2) 0.9px, rgba(163, 173, 194, 0.2) 9px);
         color: color(grey_blue, text_hv);
         border-bottom: none;
         /*border-left: 3px solid color(grey_blue, meddium_yellow);*/
@@ -47,9 +47,16 @@
             height: 2px;
             width: 100%;
             bottom: 0;
+            left: 0;
             position: absolute;
             background: linear-gradient(90deg, color(grey_blue, meddium_yellow) 30%, color(grey_blue, button) 30%);
             content: '';
+            animation: show 0.4s ease-in;
+
+            @keyframes show {
+                0% {width:0%}
+                100% {width:100%;}
+            }
         }
     }
 }

@@ -6,6 +6,7 @@
     color: color(grey_blue, text);
     z-index: 1;
     border-bottom: 3px solid color(grey_blue, meddium_yellow);
+    background: rgba(209, 214, 224, 0.6) repeating-linear-gradient(45deg, rgba(239, 241, 245, 0.1), rgba(239, 241, 245, 0.1) 0.9px, rgba(209, 214, 224, 0.2) 0.9px, rgba(209, 214, 224, 0.2) 9px);
 
     .topnav {
         .right_topnav{
@@ -36,8 +37,6 @@
             }
         }
     }
-
-    background: rgba(209, 214, 224, 0.6) repeating-linear-gradient(45deg, rgba(239, 241, 245, 0.1), rgba(239, 241, 245, 0.1) 0.9px, rgba(209, 214, 224, 0.2) 0.9px, rgba(209, 214, 224, 0.2) 9px);
 
 }
 
