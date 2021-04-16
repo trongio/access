@@ -31,10 +31,33 @@
             tr{
 
                 &:hover{
-                    background-color: color(grey_blue, button);
+                    background-color: color(grey_blue, hover_yellow);
                 }
             }
         }
 
+    }
+    .btn-primary{
+        background-color: color(grey_blue, meddium_yellow);
+        border-color: color(grey_blue, dark_yellow);
+
+        &:hover{
+            background-color: color(grey_blue, dark_yellow);
+        }
+        &:focus{
+            box-shadow: 0 0 0 .2rem color(grey_blue, hover_yellow);
+        }
+    }
+
+    #table_info, #table_paginate{
+        color: color(grey_blue, text);
+
+        a{
+            color: color(grey_blue, text) !important;
+
+            &:hover{
+                color: color(grey_blue, text_hv) !important;
+            }
+        }
     }
 }
