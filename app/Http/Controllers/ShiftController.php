@@ -37,7 +37,7 @@ class ShiftController extends Controller
                 'shiftName' => $response['shiftName'],
                 'shiftStart' => $response['shiftStart'],
                 'shiftEnd' => $response['shiftEnd'],
-                'workTime' => ((strtotime($response['shiftEnd']) - strtotime($response['shiftStart'])) / 3600).((strtotime($response['shiftEnd']) - strtotime($response['shiftStart'])) / 60 % 60)
+                'workTime' => ((strtotime($response['shiftEnd']) - strtotime($response['shiftStart'])) / 60)
             ]);
             return response()->json("shift " . $response['shiftName']. " Added successfully.");
         }

@@ -24,6 +24,7 @@
                 <th scope="col">Person Name</th>
                 <th scope="col">Work (hr)</th>
                 <th scope="col">Overtime (hr)</th>
+                <th scope="col">Missed (hr)</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,7 @@
                     <td>{{$Attendance->personName}}</td>
                     <td>{{$Attendance->workedTime}}</td>
                     <td>{{$Attendance->overtime}}</td>
+                    <td>{{$Attendance->missedTime}}</td>
                 </tr>
             @endforeach
 

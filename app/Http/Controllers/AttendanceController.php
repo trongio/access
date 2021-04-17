@@ -56,16 +56,23 @@ class AttendanceController extends Controller
                         $cnt+=$dailyAttendance[$j]->minutes;
                     }
 
-                    $workHours=$idarr['workTime'];
                     $hours = abs(intdiv($cnt, 60)).'hr'. abs($cnt % 60).'mm';
-                    $intHours = abs((intdiv($cnt, 60)) . '.' . abs($cnt % 60));
-                    $overtime = $intHours - $workHours;
+                    if($cnt - $idarr['workTime']>0){
+                        $overtime = abs(intdiv(($cnt - $idarr['workTime']), 60)).'hr'. abs(($cnt - $idarr['workTime']) % 60).'mm';
+                        $missedTime="0hr 0mm";
+                    }
+                    else {
+                        $overtime ="0hr 0mm";
+                        $missedTime=abs((($idarr['workTime']-$cnt)-($idarr['workTime']-$cnt)%60)/ 60).'hr'. abs(($idarr['workTime']-$cnt) % 60).'mm';
+                    }
+
 
                     $finalTable[$k] = (object)[
                         'personName'=>$person,
                         'personID'=>$id,
                         'workedTime'=>$hours,
                         'overtime' => `'`.$overtime.`'`,
+                        'missedTime' => `'`.$missedTime.`'`,
                         'date'=>date("d-m-Y", $i)
                     ];
                     $k++;

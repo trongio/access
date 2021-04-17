@@ -18,7 +18,7 @@ class CreateShiftsTable extends Migration
             $table->string('shiftName');
             $table->time('shiftStart');
             $table->time('shiftEnd');
-            $table->float('workTime');
+            $table->integer('workTime');
         });
     }
 
