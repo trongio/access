@@ -81,10 +81,7 @@
             &:focus{
                 border: none;
                 outline: none;
-            }
-            &:active{
-                border: none;
-                outline: none;
+                box-shadow: none;
             }
         }
         .current{
@@ -95,10 +92,7 @@
             &:focus{
                 border: none;
                 outline: none;
-            }
-            &:active{
-                border: none;
-                outline: none;
+                box-shadow: none;
             }
         }
 
