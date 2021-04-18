@@ -21,10 +21,10 @@ class AttendanceController extends Controller
             $personnelID=DB::select('select p.personID, p.personName, s.workTime from access.personnel p join shifts s on p.shiftID = s.shiftID');
             $k=0;
             foreach ($personnelID as $personID){
-                $idarr=get_object_vars ($personID);
+                $idarr = get_object_vars ($personID);
                 for ($i = strtotime($response['startDate']); $i <= strtotime($response['endDate']); $i+=60*60*24){
-                    $id=$idarr['personID'];
-                    $person=$idarr['personName'];
+                    $id = $idarr['personID'];
+                    $person = $idarr['personName'];
                     $dailyAttendance = DB::select( "
                     select l.row                                 as 'row',
                            l.logID                               as 'logID',
@@ -50,20 +50,25 @@ class AttendanceController extends Controller
                                      and l1.date = ?) m on m.row = l.row
                                         where l.actionID < m.actionID;", [$id, date('Y-m-d', $i), $id, date('Y-m-d', $i)]);
 
-                    $cnt=0;
+                    $cnt = 0;
 
-                    for ($j = 0; $j <count($dailyAttendance); $j++) {
-                        $cnt+=$dailyAttendance[$j]->minutes;
+                    for ($j = 0; $j < count($dailyAttendance); $j++) {
+                        $cnt += $dailyAttendance[$j] -> minutes;
                     }
 
                     $hours = abs(intdiv($cnt, 60)).'hr'. abs($cnt % 60).'mm';
-                    if($cnt - $idarr['workTime']>0){
-                        $overtime = abs(intdiv(($cnt - $idarr['workTime']), 60)).'hr'. abs(($cnt - $idarr['workTime']) % 60).'mm';
-                        $missedTime="0hr 0mm";
+
+                    if(($cnt - $idarr['workTime']) > 0){
+                        /*$overtime = abs(intdiv(($cnt - $idarr['workTime']), 60)).'hr'. abs(($cnt - $idarr['workTime']) % 60).'mm';*/
+                        $missedTime = "0hr 0mm";
+                        $overtime = $cnt - $idarr['workTime'];
+                        $overtime = abs(intdiv($overtime, 60)).'hr'. abs($overtime % 60).'mm';
                     }
                     else {
-                        $overtime ="0hr 0mm";
-                        $missedTime=abs((($idarr['workTime']-$cnt)-($idarr['workTime']-$cnt)%60)/ 60).'hr'. abs(($idarr['workTime']-$cnt) % 60).'mm';
+                        $overtime = "0hr 0mm";
+                        $missedTime = $idarr['workTime'] - $cnt;
+                        $missedTime = abs(intdiv($missedTime, 60)).'hr'. abs($missedTime % 60).'mm';
+                        /*$missedTime=abs((($idarr['workTime']-$cnt)-($idarr['workTime']-$cnt)%60)/ 60).'hr'. abs(($idarr['workTime']-$cnt) % 60).'mm';*/
                     }
 
 

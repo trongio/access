@@ -15,7 +15,7 @@
 
     </div>
 </div>
-@if(count($dailyAttendance)>0)
+@if(count($dailyAttendance) > 0)
     <table id="table" class="table table-hover table-bordered table-sm">
         <thead>
             <tr>

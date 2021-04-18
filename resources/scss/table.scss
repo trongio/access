@@ -1,5 +1,21 @@
 #table-container{
 
+    #table_filter{
+        input{
+            // Add search icon here
+            /*background-image: url('');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 40px;*/
+
+            &:focus{
+                outline: none;
+                border: 0.1px solid color(grey_blue, meddium_yellow) !important;
+                box-shadow: 0 0 2px color(grey_blue, meddium_yellow);
+            }
+        }
+    }
+
     #table_wrapper{
         #table_length{
             color: color(grey_blue, text);
@@ -54,10 +70,47 @@
 
         a{
             color: color(grey_blue, text) !important;
+            border: none;
+            background: transparent;
 
             &:hover{
-                color: color(grey_blue, text_hv) !important;
+                color: color(grey_blue, text) !important;
+                border: none;
+                background: color(grey_blue, hover_yellow);
+            }
+            &:focus{
+                border: none;
+                outline: none;
+            }
+            &:active{
+                border: none;
+                outline: none;
             }
         }
+        .current{
+            color: color(grey_blue, text) !important;
+            border: none;
+            background: color(grey_blue, hover_yellow);
+
+            &:focus{
+                border: none;
+                outline: none;
+            }
+            &:active{
+                border: none;
+                outline: none;
+            }
+        }
+
+        .disabled{
+            color: color(grey_blue, text) !important;
+            background: none;
+
+            &:hover{
+                color: color(grey_blue, text) !important;
+                background: none;
+            }
+        }
+
     }
 }
