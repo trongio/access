@@ -2,7 +2,7 @@
 ___
 ###run this after downloading:
 
-On Ubuntu:
+Ubuntu:
 ```
 sudo apt-get install composer ;
 sudo apt install openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip ;
@@ -18,7 +18,7 @@ php artisan key:generate ;
 sudo cp .env.example .env ;
 ```
 
-On Arch Linux:
+Arch Linux:
 ```
 sudo pacman -S composer
 sudo pacman -S openssl
