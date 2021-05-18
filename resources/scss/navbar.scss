@@ -32,6 +32,7 @@
                 &:hover {
                     color: color(grey_blue, text_hv);
                     background-color: color(grey_blue, button_hv);
+                    //background: rgba(163, 173, 194, 0.6) repeating-linear-gradient(45deg, rgba(239, 241, 245, 0.1), rgba(239, 241, 245, 0.1) 0.9px, rgba(163, 173, 194, 0.2) 0.9px, rgba(163, 173, 194, 0.2) 9px);
                     transition: 0.4s;
                 }
             }
