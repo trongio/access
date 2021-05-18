@@ -1,0 +1,110 @@
+#table-container{
+
+    #table_filter{
+        input{
+            // Add search icon here
+            /*background-image: url('');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 40px;*/
+
+            &:focus{
+                outline: none;
+                border: 0.1px solid color(grey_blue, meddium_yellow) !important;
+                box-shadow: 0 0 2px color(grey_blue, meddium_yellow);
+            }
+        }
+    }
+
+    #table_wrapper{
+        #table_length{
+            color: color(grey_blue, text);
+
+            select{
+                border: 1px solid color(grey_blue, side_nav);
+                border-radius: 8px;
+            }
+        }
+        #table_filter{
+            color: color(grey_blue, text);
+
+            input{
+                border: 1px solid color(grey_blue, side_nav);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    table{
+        border-bottom: 1px solid color(grey_blue, side_nav);
+        color: color(grey_blue, text);
+
+        th{
+            border-bottom: 1px solid color(grey_blue, side_nav);
+        }
+
+        tbody{
+            tr{
+
+                &:hover{
+                    background-color: color(grey_blue, hover_yellow);
+                }
+            }
+        }
+
+    }
+    .btn-primary{
+        background-color: color(grey_blue, meddium_yellow);
+        border-color: color(grey_blue, dark_yellow);
+
+        &:hover{
+            background-color: color(grey_blue, dark_yellow);
+        }
+        &:focus{
+            box-shadow: 0 0 0 .2rem color(grey_blue, hover_yellow);
+        }
+    }
+
+    #table_info, #table_paginate{
+        color: color(grey_blue, text);
+
+        a{
+            color: color(grey_blue, text) !important;
+            border: none;
+            background: transparent;
+
+            &:hover{
+                color: color(grey_blue, text) !important;
+                border: none;
+                background: color(grey_blue, hover_yellow);
+            }
+            &:focus{
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+        .current{
+            color: color(grey_blue, text) !important;
+            border: none;
+            background: color(grey_blue, hover_yellow);
+
+            &:focus{
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        .disabled{
+            color: color(grey_blue, text) !important;
+            background: none;
+
+            &:hover{
+                color: color(grey_blue, text) !important;
+                background: none;
+            }
+        }
+
+    }
+}

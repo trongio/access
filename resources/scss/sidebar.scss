@@ -1,22 +1,62 @@
 .sidenav {
     height: 100%;
-    width: 160px;
+    width: 190px;
     position: fixed;
     z-index: 1;
-    top: 56px;
+    top: 60px;
     left: 0;
-    background-color: color(grey,slighter);
+    background:  color(grey_blue, side_nav)  /*linear-gradient(0deg, color(grey_blue, side_nav) 80%, color(grey_blue, navigation) 95%)*/;
     overflow-x: hidden;
+    border-radius: 0 0 20px 0;
+
 
     a {
-        padding: 6px 8px 6px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-decoration: none;
-        font-size: 22px;
-        color: color(grey,base);
-        display: block;
+        font-size: 16px;
+        background-color: transparent;
+        color: #435270;
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        transition: 0.4s;
+        border-bottom: 1px solid color(grey_blue, button);
+
+        /*&:first-child{
+            border-top: 1px solid color(grey_blue, button);
+        }*/
 
         &:hover {
-            color: color(grey,darker);
+            color: color(grey_blue, text_hv);
+            background: rgba(163, 173, 194, 0.6) repeating-linear-gradient(45deg, rgba(239, 241, 245, 0.1), rgba(239, 241, 245, 0.1) 0.9px, rgba(163, 173, 194, 0.2) 0.9px, rgba(163, 173, 194, 0.2) 9px);
+            /*background: linear-gradient(0deg, color(grey_blue, text) 0, color(grey_blue, button_hv) 30%, color(grey_blue, button_hv) 70%, color(grey_blue, text) 100%);*/
+            transition: 0.4s;
+        }
+    }
+    .btn_checked{
+        margin: 0;
+        position: relative;
+        background: rgba(163, 173, 194, 0.6) repeating-linear-gradient(45deg, rgba(239, 241, 245, 0.1), rgba(239, 241, 245, 0.1) 0.9px, rgba(163, 173, 194, 0.2) 0.9px, rgba(163, 173, 194, 0.2) 9px);
+        color: color(grey_blue, text_hv);
+        border-bottom: none;
+        /*border-left: 3px solid color(grey_blue, meddium_yellow);*/
+
+        &:before{
+            height: 2px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            background: linear-gradient(90deg, color(grey_blue, meddium_yellow) 30%, color(grey_blue, button) 30%);
+            content: '';
+            animation: show 0.4s ease-in;
+
+            @keyframes show {
+                0% {width:0%}
+                100% {width:100%;}
+            }
         }
     }
 }
