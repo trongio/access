@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\TableController;
@@ -64,7 +65,8 @@ Route::get('/personnel', [TableController::class, 'personnel']);
 Route::get('/logs', [TableController::class, 'logs']);
 Route::get('/departments', [TableController::class, 'departments']);
 Route::get('/shifts', [TableController::class, 'shifts']);
-Route::get('/attendance', [TableController::class, 'attendance']);
+Route::get('/dailyAttendance', [TableController::class, 'dailyAttendance']);
+Route::get('/monthlyAttendance', [TableController::class, 'monthlyAttendance']);
 
 //Database manipulation Department
 Route::post('delDep', [DepartmentController::class, 'delete']);
@@ -73,6 +75,10 @@ Route::post('addDep', [DepartmentController::class, 'add']);
 //Database manipulation shifts
 Route::post('delShift', [ShiftController::class, 'delete']);
 Route::post('addShift', [ShiftController::class, 'add']);
+
+//Attendance getters
+Route::post('dailyAttendance', [AttendanceController::class, 'daily']);
+Route::post('monthlyAttendance', [AttendanceController::class, 'monthly']);
 
 //Loading
 Route::get('/loading', function () {

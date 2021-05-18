@@ -1,4 +1,4 @@
-window.getSegment = function (button) {
+window.getSegment = function (button,data=null) {
     $.ajax({
         url: '/loading',
         type: 'GET',
@@ -10,9 +10,12 @@ window.getSegment = function (button) {
     $.ajax({
         url: '/' + button,
         type: 'GET',
+        data:data,
         success: function success(result) {
             $("#table-container").html(result);
             sortTable();
         }
     });
+    $('.sidenav a').attr('class', '');
+    $('#' + button).attr('class', 'btn_checked');
 }
